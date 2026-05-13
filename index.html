@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浜у搧瀹跺叿璁捐鍚堥泦 | Home Furniture Design Portfolio</title>
+  <style>
+    :root {
+      --paper: #fbfaf7;
+      --surface: #ffffff;
+      --ink: #242424;
+      --muted: #6f6b63;
+      --line: #ded8cc;
+      --clay: #a65f46;
+      --sage: #6f7d68;
+      --deep: #1f2927;
+      --gold: #c09a61;
+      --shadow: 0 18px 45px rgba(31, 41, 39, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      color: inherit;
+      text-align: left;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      appearance: none;
+    }
+
+    .hero {
+      min-height: 92vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+      color: #fff;
+      background: var(--deep);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image: url("瀹㈠巺璁捐/鍑犱綍鍫嗗彔鍜栧暋妗岃璁?jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(16, 20, 18, 0.84) 0%, rgba(16, 20, 18, 0.44) 48%, rgba(16, 20, 18, 0.12) 100%),
+        linear-gradient(0deg, rgba(16, 20, 18, 0.65) 0%, rgba(16, 20, 18, 0) 42%);
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 96px 0 88px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      font-size: clamp(46px, 7vw, 92px);
+      line-height: 1.04;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .hero-author {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 300;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    .meta-chip {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      padding: 9px 15px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(251, 250, 247, 0.9);
+      border-bottom: 1px solid rgba(36, 36, 36, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 24px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 16px 18px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+      transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--ink);
+      background: rgba(111, 125, 104, 0.08);
+    }
+
+    .nav a.active {
+      color: var(--clay);
+      box-shadow: inset 0 -2px 0 var(--clay);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .intro {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 76px 0 36px;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 58px;
+      align-items: start;
+    }
+
+    .intro h2,
+    .section-title h2 {
+      color: var(--deep);
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 30px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .stat {
+      background: var(--paper);
+      padding: 22px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--clay);
+      font-size: 34px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .portfolio-section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 76px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: 0.78fr 1fr;
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--clay);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 0.85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .feature-card,
+    .thumb-card,
+    .spec-panel {
+      background: var(--surface);
+      border: 1px solid rgba(36, 36, 36, 0.07);
+      border-radius: 8px;
+      box-shadow: 0 10px 28px rgba(31, 41, 39, 0.07);
+      overflow: hidden;
+    }
+
+    .feature-card {
+      cursor: zoom-in;
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+    }
+
+    .side-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .spec-panel {
+      padding: 28px;
+      display: grid;
+      align-content: center;
+    }
+
+    .spec-panel h3 {
+      color: var(--deep);
+      font-size: 25px;
+      line-height: 1.25;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .spec-panel p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .keyword-list span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--deep);
+      font-size: 13px;
+      background: #fbfaf7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .thumb-card {
+      cursor: zoom-in;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .thumb-card:hover,
+    .feature-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .thumb-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #efeee9;
+    }
+
+    .thumb-body {
+      padding: 16px 18px 18px;
+    }
+
+    .thumb-body h3 {
+      color: var(--deep);
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .thumb-body p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .bedside-layout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .spec-table {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 20px;
+    }
+
+    .spec-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      background: var(--surface);
+      padding: 12px 0;
+      font-size: 14px;
+    }
+
+    .spec-label {
+      color: var(--sage);
+      font-weight: 700;
+    }
+
+    .spec-value {
+      color: var(--ink);
+    }
+
+    .large-product {
+      background: #f2f1ed;
+      border-radius: 8px;
+      border: 1px solid rgba(36, 36, 36, 0.07);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .large-product img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: contain;
+      padding: 28px;
+    }
+
+    .palette {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .swatch {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(36, 36, 36, 0.18);
+    }
+
+    footer {
+      background: var(--deep);
+      color: rgba(255, 255, 255, 0.74);
+      padding: 42px 20px;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(12, 15, 14, 0.94);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      font-size: 30px;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-inner img {
+      max-width: 86vw;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      pointer-events: none;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s;
+      z-index: 2;
+    }
+
+    .lightbox-nav:hover { background: rgba(255, 255, 255, 0.2); }
+    .lightbox-nav.prev { left: 20px; }
+    .lightbox-nav.next { right: 20px; }
+
+    .lightbox-caption {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      color: rgba(255, 255, 255, 0.82);
+      text-align: center;
+      font-size: 15px;
+      pointer-events: none;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 30;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--deep);
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: opacity 0.35s, transform 0.35s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover { background: var(--clay); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(34px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+    }
+
+    .reveal.in-view {
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        min-height: 84vh;
+      }
+
+      .intro,
+      .section-title,
+      .feature-grid,
+      .bedside-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        gap: 28px;
+        padding-top: 54px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .feature-card img,
+      .large-product img {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner,
+      .intro,
+      .portfolio-section {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .hero-inner {
+        padding-bottom: 58px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-meta {
+        gap: 9px;
+      }
+
+      .meta-chip {
+        font-size: 12px;
+        padding: 7px 10px;
+      }
+
+      .nav a {
+        padding: 13px 12px;
+        font-size: 13px;
+      }
+
+      .stats,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-section {
+        padding: 54px 0;
+      }
+
+      .section-title {
+        gap: 18px;
+      }
+
+      .spec-row {
+        grid-template-columns: 86px 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <span class="eyebrow">Home Furniture Design Portfolio</span>
+      <h1>浜у搧瀹跺叿璁捐鍚堥泦</h1>
+      <p class="hero-copy">浠ュ鍏枫€佺┖闂翠笌鐢熸椿鏂瑰紡涓虹嚎绱紝鏁寸悊瀹㈠巺銆佸簥澶存煖銆佹荡瀹や笌鍘ㄦ埧鍥涚粍璁捐鏂规锛屽憟鐜颁骇鍝侀€犲瀷銆佹潗璐ㄦ皵璐ㄤ笌灞呬綇鍦烘櫙銆?/p>
+      <p class="hero-author">璁捐锛氶粍闊佃　</p>
+      <div class="hero-meta" aria-label="鍚堥泦姒傝">
+        <span class="meta-chip">4 涓璁＄被鍒?/span>
+        <span class="meta-chip">15 寮犺瑙夊浘</span>
+        <span class="meta-chip">2026 Portfolio</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="椤甸潰瀵艰埅">
+    <div class="nav-inner">
+      <a href="#living">瀹㈠巺璁捐</a>
+      <a href="#bedside">搴婂ご鏌滆璁?/a>
+      <a href="#bathroom">娴村璁捐</a>
+      <a href="#kitchen">鍘ㄦ埧璁捐</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="intro" aria-label="鍚堥泦璇存槑">
+      <div>
+        <span class="tag">Design Direction</span>
+        <h2>鎶婂鍏锋斁鍥炵湡瀹炵敓娲诲満鏅腑琛ㄨ揪銆?/h2>
+      </div>
+      <div>
+        <p>鏈悎闆嗘寜瀹跺叿涓庣┖闂寸被鍒粍缁囥€傚鍘呭己璋冨嚑浣曢€犲瀷涓庤垝閫傛皼鍥达紝搴婂ご鏌滅獊鍑哄崟鍝佹柟妗堜笌瑙勬牸淇℃伅锛屾荡瀹や笌鍘ㄦ埧鍒欏睍绀虹幇浠ｅ眳浣忕┖闂翠腑鐨勫姛鑳藉竷灞€銆佹潗璐ㄨ川鎰熶笌鏁翠綋鍗忚皟鎬с€?/p>
+        <div class="stats reveal">
+          <div class="stat"><strong>05</strong><span>瀹㈠巺涓庡鍏峰浘</span></div>
+          <div class="stat"><strong>03</strong><span>搴婂ご鏌滄柟妗堝浘</span></div>
+          <div class="stat"><strong>07</strong><span>鍘ㄥ崼绌洪棿鍥?/span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="living">
+      <div class="section-title reveal">
+        <div>
+          <span class="tag">Living Room</span>
+          <h2>瀹㈠巺璁捐</h2>
+        </div>
+        <p>鍥寸粫娌欏彂銆佸挅鍟℃涓庢暣浣撳鍘呭満鏅睍寮€锛屼互鍑犱綍绉╁簭銆佹煍鍜屾潗璐ㄥ拰鑷劧鑹插僵缁勭粐鐜颁唬瀹跺眳姘涘洿銆?/p>
+      </div>
+
+      <div class="feature-grid reveal">
+        <button class="feature-card" type="button" data-src="瀹㈠巺璁捐/鍑犱綍鍫嗗彔鍜栧暋妗岃璁?jpg" data-caption="鍑犱綍鍫嗗彔鍜栧暋妗岃璁?>
+          <img loading="lazy"src="瀹㈠巺璁捐/鍑犱綍鍫嗗彔鍜栧暋妗岃璁?jpg" alt="鍑犱綍鍫嗗彔鍜栧暋妗岃璁?>
+        </button>
+        <div class="side-stack">
+          <div class="spec-panel">
+            <h3>鍑犱綍涓庤蒋瑁呯殑骞宠　</h3>
+            <p>鍜栧暋妗屼綔涓鸿瑙変腑蹇冿紝鐢ㄥ潡闈㈠彔鍚堝缓绔嬮€犲瀷璁板繂鐐癸紱娌欏彂涓庡満鏅浘琛ヨ冻浣跨敤灏哄害锛岃浜у搧鏇存帴杩戠湡瀹炲眳浣忎綋楠屻€?/p>
+            <div class="keyword-list">
+              <span>鍑犱綍鍫嗗彔</span>
+              <span>瀹㈠巺涓績</span>
+              <span>鏌斿拰涓€ц壊</span>
+              <span>鐜颁唬绠€绾?/span>
+            </div>
+          </div>
+          <button class="thumb-card" type="button" data-src="瀹㈠巺璁捐/origin娌欏彂璁捐.jpg" data-caption="娌欏彂璁捐">
+            <img loading="lazy"src="瀹㈠巺璁捐/origin娌欏彂璁捐.jpg" alt="娌欏彂璁捐">
+            <div class="thumb-body">
+              <h3>娌欏彂璁捐</h3>
+              <p>瀹㈠巺鏍稿績瀹跺叿涓庡潗鍗т綋楠?/p>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="gallery reveal">
+        <button class="thumb-card" type="button" data-src="瀹㈠巺璁捐/86062092f5b2fda90b8e5b58d399c6b2.jpg" data-caption="瀹㈠巺鍦烘櫙 01">
+          <img loading="lazy"src="瀹㈠巺璁捐/86062092f5b2fda90b8e5b58d399c6b2.jpg" alt="瀹㈠巺鍦烘櫙 01">
+          <div class="thumb-body"><h3>瀹㈠巺鍦烘櫙 01</h3><p>绌洪棿姘涘洿灞曠ず</p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="瀹㈠巺璁捐/195904be1ca46cd7998798c3194acf0b.jpg" data-caption="瀹㈠巺鍦烘櫙 02">
+          <img loading="lazy"src="瀹㈠巺璁捐/195904be1ca46cd7998798c3194acf0b.jpg" alt="瀹㈠巺鍦烘櫙 02">
+          <div class="thumb-body"><h3>瀹㈠巺鍦烘櫙 02</h3><p>閫犲瀷涓庤壊褰╁叧绯?/p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="瀹㈠巺璁捐/cb7ba2c00fec65d6eefac8daeb531f49.jpg" data-caption="瀹㈠巺鍦烘櫙 03">
+          <img loading="lazy"src="瀹㈠巺璁捐/cb7ba2c00fec65d6eefac8daeb531f49.jpg" alt="瀹㈠巺鍦烘櫙 03">
+          <div class="thumb-body"><h3>瀹㈠巺鍦烘櫙 03</h3><p>灞呬綇鍦烘櫙琛ュ厖</p></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="bedside">
+      <div class="section-title reveal">
+        <div>
+          <span class="tag">Bedroom</span>
+          <h2>搴婂ご鏌滆璁?/h2>
+        </div>
+        <p>浠モ€滃ザ娌规ⅵ骞诲簥澶存煖濂楄鈥濅负鏍稿績妗堜緥锛岀粨鍚堜骇鍝佷富娓叉煋銆佸崸瀹ゅ満鏅拰鍏抽敭瑙勬牸锛屽憟鐜颁粠閫犲瀷鍒拌惤鍦颁俊鎭殑瀹屾暣鍗曞搧鏂规銆?/p>
+      </div>
+
+      <div class="bedside-layout reveal">
+        <div class="spec-panel">
+          <h3>濂舵补姊﹀够搴婂ご鏌滃瑁?/h3>
+          <p>鐏垫劅鏉ヨ嚜娉曞紡涔℃潙涓庣幇浠ｇ畝绾︾殑铻嶅悎锛屼娇鐢ㄦ煍鍜屾洸绾裤€佸渾娑︽敮鑴氬拰閲戣壊缁嗚妭锛岃惀閫犳俯鏌斻€佺簿鑷寸殑鍗у瀹跺叿姘旇川銆?/p>
+          <div class="spec-table">
+            <div class="spec-row"><span class="spec-label">绫诲埆</span><span class="spec-value">鍗у瀹跺叿 / 搴婂ご鏌?/span></div>
+            <div class="spec-row"><span class="spec-label">瀹氫綅</span><span class="spec-value">涓珮绔崸瀹ゅ鍏峰瑁?/span></div>
+            <div class="spec-row"><span class="spec-label">灏哄</span><span class="spec-value">600mm x 400mm x 550mm</span></div>
+            <div class="spec-row"><span class="spec-label">鏉愯川</span><span class="spec-value">瀹炴湪澶嶅悎鏉?+ 鐜繚姘存€ф紗</span></div>
+            <div class="spec-row"><span class="spec-label">鎷夋墜</span><span class="spec-value">榛勯摐闀€閲戯紝鐢甸晙鎶涘厜</span></div>
+            <div class="spec-row"><span class="spec-label">椋庢牸</span><span class="spec-value">娉曞紡涔℃潙 / 鐜颁唬绠€绾?/span></div>
+          </div>
+          <div class="palette" aria-label="鑹插僵鏂规">
+            <span class="swatch" style="background:#f5f0e6" title="濂舵补鐧?></span>
+            <span class="swatch" style="background:#faf3e0" title="娴呯背榛?></span>
+            <span class="swatch" style="background:#c9a96e" title="閲戣壊鐐圭紑"></span>
+          </div>
+        </div>
+        <button class="large-product" type="button" data-src="搴婂ご鏌滆璁?02-浜у搧涓绘覆鏌撳浘.png" data-caption="搴婂ご鏌滀骇鍝佷富娓叉煋鍥?>
+          <img loading="lazy"src="搴婂ご鏌滆璁?02-浜у搧涓绘覆鏌撳浘.png" alt="搴婂ご鏌滀骇鍝佷富娓叉煋鍥?>
+        </button>
+      </div>
+
+      <div class="gallery reveal">
+        <button class="thumb-card" type="button" data-src="搴婂ご鏌滆璁?ChatGPT Image 2026骞?鏈?鏃?10_54_47.png" data-caption="搴婂ご鏌滃崸瀹ゅ満鏅?01">
+          <img loading="lazy"src="搴婂ご鏌滆璁?ChatGPT Image 2026骞?鏈?鏃?10_54_47.png" alt="搴婂ご鏌滃崸瀹ゅ満鏅?01">
+          <div class="thumb-body"><h3>鍗у鍦烘櫙 01</h3><p>娓╂煍鍏搁泤鐨勫簥杈硅钀?/p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="搴婂ご鏌滆璁?ChatGPT Image 2026骞?鏈?鏃?10_55_00.png" data-caption="搴婂ご鏌滃崸瀹ゅ満鏅?02">
+          <img loading="lazy"src="搴婂ご鏌滆璁?ChatGPT Image 2026骞?鏈?鏃?10_55_00.png" alt="搴婂ご鏌滃崸瀹ゅ満鏅?02">
+          <div class="thumb-body"><h3>鍗у鍦烘櫙 02</h3><p>鏁翠綋鎼厤鏁堟灉灞曠ず</p></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="bathroom">
+      <div class="section-title reveal">
+        <div>
+          <span class="tag">Bathroom</span>
+          <h2>娴村璁捐</h2>
+        </div>
+        <p>娴村閮ㄥ垎鍏虫敞娓呮磥鍔ㄧ嚎銆佹潗璐ㄥ眰娆″拰鍏夌嚎姘涘洿锛岀敤鐜颁唬銆佸厠鍒剁殑绌洪棿璇█鎻愬崌鏃ュ父娲楁荡浣撻獙銆?/p>
+      </div>
+
+      <div class="feature-grid reveal">
+        <button class="feature-card" type="button" data-src="娴村璁捐/b3a834d3-197a-4932-ad75-9827d2fae6df.png" data-caption="娴村鏁翠綋绌洪棿">
+          <img loading="lazy"src="娴村璁捐/b3a834d3-197a-4932-ad75-9827d2fae6df.png" alt="娴村鏁翠綋绌洪棿">
+        </button>
+        <div class="spec-panel">
+          <h3>鍔熻兘涓庤川鎰熷苟閲?/h3>
+          <p>閫氳繃娴呰壊鐣岄潰銆佺畝娲佺嚎鏉′笌灞€閮ㄦ繁鑹叉潗璐ㄥ舰鎴愬眰娆★紝璁╂荡瀹ょ┖闂存棦鏈夋竻鐖芥劅锛屼篃淇濈暀楂樼骇銆佸畨闈欑殑瑙嗚姘旇川銆?/p>
+          <div class="keyword-list">
+            <span>骞插噣鍔ㄧ嚎</span>
+            <span>鐭虫潗璐ㄦ劅</span>
+            <span>鏌斿拰鐓ф槑</span>
+            <span>鐜颁唬鍗荡</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery reveal">
+        <button class="thumb-card" type="button" data-src="娴村璁捐/bb9d8ad5-b071-4763-a11b-bf51764920e1.png" data-caption="娴村缁嗚妭灞曠ず">
+          <img loading="lazy"src="娴村璁捐/bb9d8ad5-b071-4763-a11b-bf51764920e1.png" alt="娴村缁嗚妭灞曠ず">
+          <div class="thumb-body"><h3>缁嗚妭灞曠ず</h3><p>鏉愯川涓庡眬閮ㄥ叧绯?/p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="娴村璁捐/46dee6d0-6818-4d81-b66d-6bd71da3b22c.png" data-caption="娴村瑙掑害灞曠ず">
+          <img loading="lazy"src="娴村璁捐/46dee6d0-6818-4d81-b66d-6bd71da3b22c.png" alt="娴村瑙掑害灞曠ず">
+          <div class="thumb-body"><h3>瑙掑害灞曠ず</h3><p>绌洪棿灏哄害涓庤绾?/p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="娴村璁捐/ffdb7332-49c2-461c-a8ec-f387b102ef72.png" data-caption="娴村鍏ㄦ櫙灞曠ず">
+          <img loading="lazy"src="娴村璁捐/ffdb7332-49c2-461c-a8ec-f387b102ef72.png" alt="娴村鍏ㄦ櫙灞曠ず">
+          <div class="thumb-body"><h3>鍏ㄦ櫙灞曠ず</h3><p>鏁翠綋鏂规琛ュ厖</p></div>
+        </button>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="kitchen">
+      <div class="section-title reveal">
+        <div>
+          <span class="tag">Kitchen</span>
+          <h2>鍘ㄦ埧璁捐</h2>
+        </div>
+        <p>鍘ㄦ埧鏂规浠ュ姛鑳藉竷灞€涓烘牳蹇冿紝鍏奸【鎿嶄綔鏁堢巼銆佹敹绾崇З搴忎笌绌洪棿璐ㄦ劅锛屽舰鎴愭洿閫傚悎鏃ュ父浣跨敤鐨勭児楗幆澧冦€?/p>
+      </div>
+
+      <div class="feature-grid reveal">
+        <button class="feature-card" type="button" data-src="鍘ㄦ埧璁捐/586b74de-3f26-4314-a04d-65d0617eb144.png" data-caption="鍘ㄦ埧鏁翠綋甯冨眬">
+          <img loading="lazy"src="鍘ㄦ埧璁捐/586b74de-3f26-4314-a04d-65d0617eb144.png" alt="鍘ㄦ埧鏁翠綋甯冨眬">
+        </button>
+        <div class="spec-panel">
+          <h3>鏁堢巼銆佹敹绾充笌瑙嗚绉╁簭</h3>
+          <p>閫氳繃娓呮櫚鐨勬搷浣滈潰銆佽繛缁煖浣撳拰缁熶竴鏉愯川锛岃鍘ㄦ埧涓嶅彧鏄児楗┖闂达紝涔熸垚涓哄涓ǔ瀹氥€佸共鍑€鐨勭敓娲昏儗鏅€?/p>
+          <div class="keyword-list">
+            <span>楂樻晥甯冨眬</span>
+            <span>缁熶竴鏌滀綋</span>
+            <span>鑰愮湅鏉愯川</span>
+            <span>鏃ュ父浣跨敤</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery reveal">
+        <button class="thumb-card" type="button" data-src="鍘ㄦ埧璁捐/ChatGPT Image 2026骞?鏈?鏃?09_02_16.png" data-caption="鍘ㄦ埧缁嗚妭灞曠ず">
+          <img loading="lazy"src="鍘ㄦ埧璁捐/ChatGPT Image 2026骞?鏈?鏃?09_02_16.png" alt="鍘ㄦ埧缁嗚妭灞曠ず">
+          <div class="thumb-body"><h3>缁嗚妭灞曠ず</h3><p>鍙伴潰銆佹煖浣撲笌鍏夌嚎</p></div>
+        </button>
+        <button class="thumb-card" type="button" data-src="鍘ㄦ埧璁捐/f5ae1c45-78d7-4c71-b2e8-0cb2fb51e51d.png" data-caption="鍘ㄦ埧鍏ㄦ櫙灞曠ず">
+          <img loading="lazy"src="鍘ㄦ埧璁捐/f5ae1c45-78d7-4c71-b2e8-0cb2fb51e51d.png" alt="鍘ㄦ埧鍏ㄦ櫙灞曠ず">
+          <div class="thumb-body"><h3>鍏ㄦ櫙灞曠ず</h3><p>鏁翠綋绌洪棿鍏崇郴</p></div>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>浜у搧瀹跺叿璁捐鍚堥泦 / 榛勯煹琛?/ 2026</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="鍏抽棴棰勮">&times;</button>
+    <div class="lightbox-inner">
+      <img loading="lazy"id="lightboxImage" src="" alt="">
+    </div>
+    <button class="lightbox-nav prev" id="lightboxPrev" type="button" aria-label="涓婁竴寮?>&#10094;</button>
+    <button class="lightbox-nav next" id="lightboxNext" type="button" aria-label="涓嬩竴寮?>&#10095;</button>
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+  </div>
+
+  <button class="back-to-top" id="backToTop" type="button" aria-label="杩斿洖椤堕儴" title="杩斿洖椤堕儴">&#8593;</button>
+
+  <script>
+    (function() {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const closeButton = document.querySelector(".lightbox-close");
+      const prevBtn = document.getElementById("lightboxPrev");
+      const nextBtn = document.getElementById("lightboxNext");
+      const backToTop = document.getElementById("backToTop");
+
+      // Build gallery array from all [data-src] elements
+      const items = Array.from(document.querySelectorAll("[data-src]"));
+      const gallery = items.map(function(el) {
+        return {
+          src: el.dataset.src,
+          caption: el.dataset.caption || ""
+        };
+      });
+      var currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        var item = gallery[index];
+        lightboxImage.src = item.src;
+        lightboxImage.alt = item.caption;
+        lightboxCaption.textContent = item.caption;
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        updateArrowVisibility();
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        lightboxImage.src = "";
+      }
+
+      function showPrev() {
+        if (currentIndex > 0) openLightbox(currentIndex - 1);
+      }
+
+      function showNext() {
+        if (currentIndex < gallery.length - 1) openLightbox(currentIndex + 1);
+      }
+
+      function updateArrowVisibility() {
+        prevBtn.style.visibility = currentIndex === 0 ? "hidden" : "visible";
+        nextBtn.style.visibility = currentIndex === gallery.length - 1 ? "hidden" : "visible";
+      }
+
+      // Wire up item clicks
+      items.forEach(function(el, i) {
+        el.addEventListener("click", function() {
+          openLightbox(i);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+      prevBtn.addEventListener("click", function(e) { e.stopPropagation(); showPrev(); });
+      nextBtn.addEventListener("click", function(e) { e.stopPropagation(); showNext(); });
+
+      lightbox.addEventListener("click", function(event) {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", function(event) {
+        if (!lightbox.classList.contains("active")) return;
+        if (event.key === "Escape") closeLightbox();
+        if (event.key === "ArrowLeft") showPrev();
+        if (event.key === "ArrowRight") showNext();
+      });
+
+      // --- Nav scroll tracking ---
+      var navLinks = document.querySelectorAll(".nav a");
+      var sectionIds = Array.from(navLinks).map(function(a) {
+        return a.getAttribute("href").replace("#", "");
+      });
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(a) { a.classList.remove("active"); });
+            var active = document.querySelector('.nav a[href="#' + entry.target.id + '"]');
+            if (active) active.classList.add("active");
+          }
+        });
+      }, { rootMargin: "-30% 0px -60% 0px" });
+
+      sectionIds.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+
+      // --- Scroll-reveal animation ---
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+
+      document.querySelectorAll(".reveal").forEach(function(el) {
+        revealObserver.observe(el);
+      });
+
+      // --- Back to top ---
+      function toggleBackToTop() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 600) {
+          backToTop.classList.add("visible");
+        } else {
+          backToTop.classList.remove("visible");
+        }
+      }
+
+      window.addEventListener("scroll", toggleBackToTop, { passive: true });
+      backToTop.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // Initial check
+      toggleBackToTop();
+    })();
+  </script>
+</body>
+</html>
